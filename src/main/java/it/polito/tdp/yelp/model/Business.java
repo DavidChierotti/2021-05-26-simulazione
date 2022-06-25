@@ -1,6 +1,6 @@
 package it.polito.tdp.yelp.model;
 
-public class Business {
+public class Business implements Comparable<Business>{
 	private String businessId;
 	private String fullAddress;
 	private String active;
@@ -130,5 +130,17 @@ public class Business {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Business [businessId=" + businessId + ", businessName=" + businessName + "]";
+	}
+
+	@Override
+	public int compareTo(Business o) {
+		// TODO Auto-generated method stub
+		return this.businessName.compareTo(o.getBusinessName());
+	}
+
+	
 	
 }
